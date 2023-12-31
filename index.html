@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year, Karia ❤️</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff66a2, #9c51b6);
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            color: white; /* You might want to adjust text color based on the background */
+            text-align: center;
+            line-height: 1.6;
+                        overflow: hidden;
+        }
+    </style>
+<body class="flex items-center justify-center h-screen">
+        <div id="falling-images-container"></div>       
+    <div id="wordDisplay" class="text-4xl font-bold"></div>
+
+    <script>
+        function displayWords(words, index) {
+            if (index < words.length) {
+                document.getElementById('wordDisplay').innerHTML = words[index];
+                index++;
+                setTimeout(function() {
+                    displayWords(words, index);
+                }, 300); // Adjust the delay (in milliseconds) between words
+            }
+        }
+
+        // Initial call to start displaying words
+        displayWords(['Dear', 'Karia','Happy', 'New', 'Year!','I', 'wish', 'you', 'a', '2024', 'full', 'of', 'beautiful', 'things', 'and', 'that', 'we', 'can', 'accomplish', 'all', 'of', 'our', 'dreams', 'year', 'full', 'of', 'reasons', 'to', 'smile', 'and', 'to', 'be', 'happy', 'and', 'year', 'of', 'more', 'of', 'us', 'together', 'A', 'year', 'that', 'we', 'can', 'start', 'completing', 'our', '✨ Wish Chat ✨', 'and', 'Things To Do Together', 'that', 'we', 'can', 'hug', 'kiss', 'and', 'love', 'each', 'more', 'and', 'more', '😘', 'My', 'love', 'for', 'you', 'is', 'eternal', 'my', 'lovely', 'princess', ',', 'I love you', 'Amo-te', 'Я тебя люблю', 'მიყვარხარ', 'Ես սիրում եմ քեզ', 'Seni seviyorum', 'Волим те', 'Volim te', 'Volim', 'Unë të dua', 'Mwah'], 0);
+    </script>
+  <script>
+        // JSS styling
+        const styles = {
+            '@keyframes fall': {
+                '0%': {
+                    transform: 'translateY(0)',
+                },
+                '100%': {
+                    transform: 'translateY(100vh)',
+                },
+            },
+            '.falling-image': {
+                position: 'absolute',
+                width: '50px', // Set the width of your image
+                height: '50px', // Set the height of your image
+                backgroundImage: 'url("img.jpg")', // Replace 'path/to/your/image.png' with the actual path to your image
+                backgroundSize: 'cover',
+                animation: '$fall 5s linear infinite',
+            },
+        };  
+
+        const { classes } = jss.createStyleSheet(styles).attach();
+
+        // Add falling images dynamically
+        const container = document.getElementById('falling-images-container');
+        for (let i = 0; i < 10; i++) {
+            const fallingImage = document.createElement('div');
+            fallingImage.className = classes['falling-image'];
+            container.appendChild(fallingImage);
+        }
+    </script>
+            
+        <script src="https://cdn.jsdelivr.net/npm/jss@10.7.1/dist/jss.min.js"></script>
+</body>
+</html>
+        
